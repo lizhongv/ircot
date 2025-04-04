@@ -1,0 +1,37 @@
+jsonnet
+torch>=1.7,!=1.12.0
+# git+https://github.com/huggingface/transformers.git@8637316e5e94ba0a2493e5df7846f2f23f46eaef
+transformers>=4.46.3 # TODO
+accelerate==1.0.1  # TODO 
+sentencepiece
+protobuf==3.19.0
+nltk
+scipy
+openai
+diskcache
+typing_extensions<4.6.0
+spacy==3.4.1 # Only for one of the experiments.
+rapidfuzz
+datasets
+pandas
+requests
+tqdm
+ftfy
+ujson
+fastapi
+uvicorn[standard]
+elasticsearch==7.9.1
+dill
+base58
+pygments
+beautifulsoup4
+blingfire
+wget
+black
+ruff
+colorlog
+pydantic==1.9.2 # 版本1，对应着低版本spacy
+pyserini==0.22.1
+faiss-gpu -f https://download.pytorch.org/whl/cu117/torch_stable.html
+# pip install faiss-gpu -f https://download.pytorch.org/whl/cu117/torch_stable.html
+# pip install faiss-cpu
