@@ -15,7 +15,7 @@ if True:
     from commaqa.inference.model_search import ModelController, BestFirstDecomposer
     from commaqa.inference.dataset_readers import DatasetReader
     from commaqa.inference.constants import MODEL_NAME_CLASS, READER_NAME_CLASS
-    from log.logging_config import logger, LYELLOW, RESET, LBLUE, LRED
+    from log.logging_config import logger, LYELLOW, RESET, LBLUE, LRED, LGREEN
 
 
 def parse_arguments():
@@ -158,7 +158,7 @@ def inference_mode(args, reader, decomposer, model_map, override_answer_by=None)
         with mp.Pool(args.threads) as p:
             qid_answer_chains = p.map(decomposer.return_qid_prediction, reader.read_examples(args.input))
     else:
-        logger.info(f"Reading examples from {LBLUE}{args.input}{RESET}")
+        logger.info(f"Reading examples from: {LGREEN}{args.input}{RESET}")
         iterator = reader.read_examples(args.input)
         for example in tqdm(iterator, desc="Processing samples..."):
             tmp = decomposer.return_qid_prediction(example, override_answer_by=override_answer_by, debug=args.debug, silent=args.silent)
@@ -228,3 +228,4 @@ if __name__ == "__main__":
         override_answer_by = config_map.get("override_answer_by", None)
         logger.info("Running inference")
         inference_mode(args=parsed_args, reader=example_reader, decomposer=decomposer, model_map=model_map, override_answer_by=override_answer_by,)
+    logger.info("Done.")

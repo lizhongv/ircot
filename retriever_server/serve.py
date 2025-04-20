@@ -11,7 +11,7 @@ retriever = UnifiedRetriever(host="http://localhost/", port=9200)
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if True:
-    from logging_.logging_config import logger, LYELLOW, RESET
+    from log.logging_config import logger, LYELLOW, RESET
 
 
 app = FastAPI()
@@ -38,8 +38,7 @@ async def retrieve(arguments: Request):  # see the corresponding method in unifi
     return JSONResponse(content=response_data)  # JSONResponse source code: indent=4
 
     """
-    curl -X POST \
+    curl -X POST  http://localhost:8000/retrieve \
      -H "Content-Type: application/json" \
-     -d '{"retrieval_method": "retrieve_from_elasticsearch", "query_text": "Given that a certain scientist won the Nobel Prize in Physics for a discovery related to sub - atomic particles, and this scientist studied at a university in England, and the university is known for its strong research in quantum mechanics, which scientist is it?", "max_hits_count": 3, "max_buffer_count": 100, "document_type": "paragraph_text"}' \
-     http://localhost:8000/retrieve/
+     -d '{"retrieval_method": "retrieve_from_elasticsearch", "query_text": "Given that a certain scientist won the Nobel Prize in Physics for a discovery related to sub - atomic particles, and this scientist studied at a university in England, and the university is known for its strong research in quantum mechanics, which scientist is it?", "max_hits_count": 3, "max_buffer_count": 100, "document_type": "paragraph_text"}' 
     """

@@ -2,16 +2,16 @@ import logging
 import colorlog
 
 # 创建日志记录器
-logger = logging.getLogger('my_app_logger')
-logger.setLevel(logging.DEBUG)  # 设置全局日志级别
+logger = logging.getLogger('ircot')
+logger.setLevel(logging.INFO)  # 设置全局日志级别
 
 # 创建控制台处理器
 console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)  # 控制台输出所有级别的日志
+console_handler.setLevel(logging.INFO)  # 控制台输出所有级别的日志
 
 # 创建文件处理器
 file_handler = logging.FileHandler('app.log')
-file_handler.setLevel(logging.DEBUG)  # 文件只记录 INFO 及以上级别的日志
+file_handler.setLevel(logging.INFO)  # 文件只记录 INFO 及以上级别的日志
 
 # 设置日志格式
 formatter = colorlog.ColoredFormatter(

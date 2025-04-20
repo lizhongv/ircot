@@ -21,7 +21,7 @@ from lib import (
     infer_source_target_prefix,
     get_config_file_path_from_name_or_path,
 )
-from log.logging_config import logger, LYELLOW, RESET, LRED, LBLUE
+from log.logging_config import logger, LYELLOW, RESET, LRED, LBLUE, LGREEN
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -489,7 +489,7 @@ def main():
     hyperparameter_variations_directory = os.path.join("instantiated_configs")
     os.makedirs(hyperparameter_variations_directory, exist_ok=True)
 
-    logger.info(f"Loading config from {LBLUE}{config_filepath}{RESET}")
+    logger.info(f"Loading config from: {LGREEN}{config_filepath}{RESET}")
     with open(config_filepath, "r") as file:
         file_content = file.read().strip()
 
@@ -500,8 +500,8 @@ def main():
     valid_qids = dataset_to_prompt_set_to_qids[dataset_name][_prompt_set]
     variable_replacements = {}
     if valid_qids is not None:
-        variable_replacements = {"valid_qids": json.dumps(valid_qids)}
-    logger.info(f"Update config with variable {LYELLOW}{variable_replacements}{RESET}")
+        variable_replacements = {"valid_qids": str(valid_qids)}
+    logger.info(f"Update config with variable: {LYELLOW}{variable_replacements}{RESET}")
     file_content = instatiate_config(content=file_content, variable_replacements=variable_replacements)
 
     # cot prompt
@@ -530,7 +530,7 @@ def main():
         variable_replacements = {}
         for key, value in zip(instantiation_scheme.keys(), values):
             variable_replacements[key] = copy.deepcopy(value)
-        logger.info(f"Update config with variable {LYELLOW}{variable_replacements}{RESET}")
+        logger.info(f"Update config with variable: {LYELLOW}{variable_replacements}{RESET}")
         local_file_content = instatiate_config(content=local_file_content, variable_replacements=variable_replacements)
 
         local_names = copy.deepcopy(_names)
@@ -592,7 +592,7 @@ def main():
             print("".join(lines[:10]), flush=True)
 
         if args.command == "write" and not args.best:
-            logger.info(f"Writing Instantiate config to {LBLUE}{local_file_path}{RESET}")
+            logger.info(f"Writing Instantiate config to: {LGREEN}{local_file_path}{RESET}")
             with open(local_file_path, "w") as file:
                 file.write(local_file_content)
         # 1

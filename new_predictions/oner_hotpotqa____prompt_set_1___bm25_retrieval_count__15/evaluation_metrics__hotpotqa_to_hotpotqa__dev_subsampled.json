@@ -1,0 +1,18 @@
+{
+    "title_em": 0.0,
+    "title_f1": 0.143,
+    "title_precision": 0.081,
+    "title_recall": 0.6,
+    "para_em": 0.0,
+    "para_f1": 0.143,
+    "para_precision": 0.081,
+    "para_recall": 0.6,
+    "avg_predicted_titles": 14.8,
+    "max_predicted_titles": 15,
+    "min_predicted_titles": 7,
+    "avg_predicted_paras": 14.8,
+    "max_predicted_paras": 15,
+    "min_predicted_paras": 7,
+    "count": 100,
+    "git_hash": "5eabf8cbaeb2c292aebed5959d77b369e1c9cff9"
+}

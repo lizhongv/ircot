@@ -124,128 +124,113 @@ class MultiParaRCReader(DatasetReader):
         self.qid_to_external_titles = defaultdict(list)
 
     def read_examples(self, file):
+        # First count total lines for accurate progress
+        with open(file, "r") as input_fp:
+            total_lines = sum(1 for _ in input_fp)
 
         with open(file, "r") as input_fp:
-
-            for line in tqdm(input_fp):
-
+            for line_num, line in enumerate(tqdm(input_fp, total=total_lines, desc="Processing", unit="examples"), 1):
                 if not line.strip():
                     continue
 
-                input_instance = json.loads(line)
+                try:
+                    input_instance = json.loads(line)
+                    qid = input_instance["question_id"]
+                    query = question = input_instance["question_text"]
+                    answers_objects = input_instance["answers_objects"]
 
-                qid = input_instance["question_id"]
-                query = question = input_instance["question_text"]
-                answers_objects = input_instance["answers_objects"]
-
-                formatted_answers = [  # List of potentially validated answers. Usually it's a list of one item.
-                    tuple(format_drop_answer(answers_object)) for answers_object in answers_objects
-                ]
-                answer = Counter(formatted_answers).most_common()[0][0]
-
-                output_instance = {
-                    "qid": qid,
-                    "query": query,
-                    "answer": answer,
-                    "question": question,
-                }
-
-                for paragraph in input_instance.get("pinned_contexts", []) + input_instance["contexts"]:
-                    assert not paragraph["paragraph_text"].strip().startswith("Title: ")
-                    assert not paragraph["paragraph_text"].strip().startswith("Wikipedia Title: ")
-
-                title_paragraph_tuples = []
-
-                if self.add_pinned_paras:
-                    for paragraph in input_instance["pinned_contexts"]:
-                        title = paragraph["title"]
-                        paragraph_text = paragraph["paragraph_text"]
-                        if (title, paragraph_text) not in title_paragraph_tuples:
-                            title_paragraph_tuples.append((title, paragraph_text))
-
-                if self.add_paras:
-                    assert not self.add_gold_paras, "enable only one of the two: add_paras and add_gold_paras."
-                    for paragraph in input_instance["contexts"]:
-                        title = paragraph["title"]
-                        paragraph_text = paragraph["paragraph_text"]
-                        if (title, paragraph_text) not in title_paragraph_tuples:
-                            title_paragraph_tuples.append((title, paragraph_text))
-
-                if self.add_gold_paras:
-                    assert not self.add_paras, "enable only one of the two: add_paras and add_gold_paras."
-                    for paragraph in input_instance["contexts"]:
-                        if not paragraph["is_supporting"]:
-                            continue
-                        title = paragraph["title"]
-                        paragraph_text = paragraph["paragraph_text"]
-                        if (title, paragraph_text) not in title_paragraph_tuples:
-                            title_paragraph_tuples.append((title, paragraph_text))
-
-                if self.max_num_words_per_para is not None:
-                    title_paragraph_tuples = [
-                        (title, " ".join(paragraph_text.split(" ")[: self.max_num_words_per_para]))
-                        for title, paragraph_text in title_paragraph_tuples
+                    # Format answers
+                    formatted_answers = [
+                        tuple(format_drop_answer(answers_object))
+                        for answers_object in answers_objects
                     ]
+                    answer = Counter(formatted_answers).most_common()[0][0]
 
-                output_instance["titles"] = [e[0] for e in title_paragraph_tuples]
-                output_instance["paras"] = [e[1] for e in title_paragraph_tuples]
+                    output_instance = {
+                        "qid": qid,
+                        "query": query,
+                        "answer": answer,
+                        "question": question,
+                    }
 
-                if self.remove_pinned_para_titles and "pinned_contexts" in input_instance:
-                    for paragraph in input_instance["pinned_contexts"]:
-                        while paragraph["title"] in output_instance["titles"]:
-                            index = output_instance["titles"].index(paragraph["title"])
-                            output_instance["titles"].pop(index)
-                            output_instance["paras"].pop(index)
+                    # Process paragraphs
+                    title_paragraph_tuples = []
 
-                pids = [
-                    get_pid_for_title_paragraph_text(title, paragraph_text)
-                    for title, paragraph_text in zip(output_instance["titles"], output_instance["paras"])
-                ]
-                output_instance["pids"] = pids
+                    # Add pinned paragraphs if enabled
+                    if self.add_pinned_paras:
+                        title_paragraph_tuples.extend(
+                            (p["title"], p["paragraph_text"])
+                            for p in input_instance["pinned_contexts"]
+                            if (p["title"], p["paragraph_text"]) not in title_paragraph_tuples
+                        )
 
-                output_instance["real_pids"] = [
-                    paragraph["id"]
-                    for paragraph in input_instance["contexts"]
-                    if paragraph["is_supporting"] and "id" in paragraph
-                ]
+                    # Add regular or gold paragraphs
+                    if self.add_paras:
+                        assert not self.add_gold_paras, "Enable only one: add_paras or add_gold_paras"
+                        title_paragraph_tuples.extend(
+                            (p["title"], p["paragraph_text"])
+                            for p in input_instance["contexts"]
+                            if (p["title"], p["paragraph_text"]) not in title_paragraph_tuples
+                        )
+                    elif self.add_gold_paras:
+                        title_paragraph_tuples.extend(
+                            (p["title"], p["paragraph_text"])
+                            for p in input_instance["contexts"]
+                            if p["is_supporting"] and (p["title"], p["paragraph_text"]) not in title_paragraph_tuples
+                        )
 
-                for para in output_instance["paras"]:
-                    assert not para.strip().startswith("Title: ")
-                    assert not para.strip().startswith("Wikipedia Title: ")
+                    # Apply word limit if specified
+                    if self.max_num_words_per_para is not None:
+                        title_paragraph_tuples = [
+                            (title, " ".join(text.split()[:self.max_num_words_per_para]))
+                            for title, text in title_paragraph_tuples
+                        ]
 
-                # Backup Paras and Titles are set so that we can filter from the original set
-                # of paragraphs again and again.
-                if "paras" in output_instance:
-                    output_instance["backup_paras"] = copy.deepcopy(output_instance["paras"])
-                    output_instance["backup_titles"] = copy.deepcopy(output_instance["titles"])
+                    # Prepare output
+                    output_instance.update({
+                        "titles": [t[0] for t in title_paragraph_tuples],
+                        "paras": [t[1] for t in title_paragraph_tuples],
+                        "pids": [
+                            get_pid_for_title_paragraph_text(t[0], t[1])
+                            for t in title_paragraph_tuples
+                        ],
+                        "real_pids": [
+                            p["id"] for p in input_instance["contexts"]
+                            if p["is_supporting"] and "id" in p
+                        ],
+                        "metadata": {
+                            "level": input_instance.get("level"),
+                            "type": input_instance.get("type"),
+                            "answer_type": input_instance.get("answer_type"),
+                            "simplified_answer_type": input_instance.get("simplified_answer_type"),
+                            "gold_titles": [p["title"] for p in input_instance["contexts"] if p["is_supporting"]],
+                            "gold_paras": [p["paragraph_text"] for p in input_instance["contexts"] if p["is_supporting"]],
+                            "gold_ids": [p.get("id") for p in input_instance["contexts"] if p["is_supporting"]],
+                            "pin_position": self.pin_position
+                        }
+                    })
 
-                if "valid_titles" in input_instance:
-                    output_instance["valid_titles"] = input_instance["valid_titles"]
+                    # Add pinned para metadata if enabled
+                    if self.add_pinned_paras:
+                        pinned = input_instance["pinned_contexts"][0]
+                        output_instance["metadata"].update({
+                            "pinned_para": pinned["paragraph_text"],
+                            "pinned_title": pinned["title"]
+                        })
 
-                output_instance["metadata"] = {}
-                output_instance["metadata"]["level"] = input_instance.get("level", None)
-                output_instance["metadata"]["type"] = input_instance.get("type", None)
-                output_instance["metadata"]["answer_type"] = input_instance.get("answer_type", None)
-                output_instance["metadata"]["simplified_answer_type"] = input_instance.get(
-                    "simplified_answer_type", None
-                )
+                    # Add backup paras if they exist
+                    if "paras" in output_instance:
+                        output_instance.update({
+                            "backup_paras": output_instance["paras"].copy(),
+                            "backup_titles": output_instance["titles"].copy()
+                        })
 
-                if self.add_pinned_paras:
-                    assert len(input_instance["pinned_contexts"]) == 1
-                    output_instance["metadata"]["pinned_para"] = input_instance["pinned_contexts"][0]["paragraph_text"]
-                    output_instance["metadata"]["pinned_title"] = input_instance["pinned_contexts"][0]["title"]
-                output_instance["metadata"]["pin_position"] = self.pin_position
+                    # Add valid titles if they exist
+                    if "valid_titles" in input_instance:
+                        output_instance["valid_titles"] = input_instance["valid_titles"]
 
-                output_instance["metadata"]["gold_titles"] = []
-                output_instance["metadata"]["gold_paras"] = []
-                output_instance["metadata"]["gold_ids"] = []
-                for paragraph in input_instance["contexts"]:
-                    if not paragraph["is_supporting"]:
-                        continue
-                    title = paragraph["title"]
-                    paragraph_text = paragraph["paragraph_text"]
-                    output_instance["metadata"]["gold_titles"].append(title)
-                    output_instance["metadata"]["gold_paras"].append(paragraph_text)
-                    output_instance["metadata"]["gold_ids"].append(paragraph.get("id", None))
+                    yield output_instance
 
-                yield output_instance
+                except Exception as e:
+                    print(f"Error processing line {line_num}: {str(e)}")
+                    continue

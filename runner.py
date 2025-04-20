@@ -38,7 +38,7 @@ def main():
     experiment_name = "_".join([args.system, args.model.replace("-", "_"), args.dataset])
     if args.model == "none":
         experiment_name = "_".join([args.system, args.dataset])
-    logger.info(f"Experiment Name: {LYELLOW}{experiment_name}{RESET}")
+    logger.info(f"Experiment Name: {LBLUE}{experiment_name}{RESET}")
 
     instantiation_scheme = args.system
 

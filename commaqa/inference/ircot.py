@@ -17,7 +17,7 @@ from commaqa.inference.model_search import ParticipantModel
 from commaqa.models.gpt3generator import GPT3Generator
 from commaqa.models.llm_client_generator import LLMClientGenerator
 from commaqa.inference.dataset_readers import get_pid_for_title_paragraph_text
-from log.logging_config import logger, LYELLOW, RESET
+from log.logging_config import logger, LYELLOW, RESET, LGREEN
 
 
 random.seed(100)  # Don't change.
@@ -31,12 +31,14 @@ def get_spacy_object():
 
 
 def is_reasoning_sentence(sentence: str) -> bool:
-    starters = ["thus ", "thus,", "so ", "so,", "that is,", "therefore", "hence"]
+    starters = ["thus ", "thus,", "so ", "so,",
+                "that is,", "therefore", "hence"]
     for starter in starters:
         if sentence.lower().startswith(starter):
             return True
 
-    regex = re.compile("(.*)(\d[\d,]*\.?\d+|\d+) ([+-]) (\d[\d,]*\.?\d+|\d+) = (\d[\d,]*\.?\d+|\d+)(.*)")
+    regex = re.compile(
+        "(.*)(\d[\d,]*\.?\d+|\d+) ([+-]) (\d[\d,]*\.?\d+|\d+) = (\d[\d,]*\.?\d+|\d+)(.*)")
     match = bool(re.match(regex, sentence))
     if match:
         return True
@@ -53,14 +55,17 @@ def safe_post_request(url, params):
         try:
             return requests.post(url, json=params)
         except:
-            logger.info("Post request didn't succeed. Will wait 20s and retry.")
+            logger.info(
+                "Post request didn't succeed. Will wait 20s and retry.")
             time.sleep(20)
     raise Exception("Post request couldn't succeed after several attempts.")
 
 
 def remove_wh_words(text: str) -> str:
-    wh_words = {"who", "what", "when", "where", "why", "which", "how", "does", "is"}
-    words = [word for word in text.split(" ") if word.strip().lower() not in wh_words]
+    wh_words = {"who", "what", "when", "where",
+                "why", "which", "how", "does", "is"}
+    words = [word for word in text.split(
+        " ") if word.strip().lower() not in wh_words]
     text = " ".join(words)
     return text
 
@@ -137,7 +142,8 @@ def para_to_text(title: str, para: str, max_num_words: int) -> int:
     # Note: the split and join must happen before the attaching title+para.
     # also don't split() because that disrupts the new lines.
     para = " ".join(para.split(" ")[:max_num_words])
-    para = para.strip() if para.strip().startswith("Wikipedia Title: ") else "Wikipedia Title: " + title + "\n" + para.strip()
+    para = para.strip() if para.strip().startswith(
+        "Wikipedia Title: ") else "Wikipedia Title: " + title + "\n" + para.strip()
     return para
 
 
@@ -160,7 +166,8 @@ def add_and_reorder_if_pinned(titles, paras, pinned_title, pinned_para, pin_posi
             paras.insert(0, pinned_para)
 
         pin_index = paras.index(pinned_para)
-        assert titles[pin_index].lower().strip() == pinned_title.lower().strip()
+        assert titles[pin_index].lower().strip(
+        ) == pinned_title.lower().strip()
 
         if pin_position == "no_op":
             return titles, paras
@@ -233,20 +240,24 @@ class AnswerExtractor(ParticipantModel):
             if debug:
                 print("EXT: " + answer)
 
-            try:  # Hacky. Fix later. This is to handle '[\\"1,450 miles\\"]' to '["1,450 miles"]'
+            # Hacky. Fix later. This is to handle '[\\"1,450 miles\\"]' to '["1,450 miles"]'
+            try:
                 json.loads(answer)
             except:
                 try:
-                    answer = json.dumps(json.loads(answer.encode("utf-8").decode("unicode_escape")))
+                    answer = json.dumps(json.loads(
+                        answer.encode("utf-8").decode("unicode_escape")))
                 except:
                     pass
 
-            new_state.data.add_answer(QuestionAnsweringStep(answer=answer, score=0, participant=state.next))
+            new_state.data.add_answer(QuestionAnsweringStep(
+                answer=answer, score=0, participant=state.next))
             new_state.last_output = answer
             new_state.next = self.next_model
             return new_state
         else:
-            print("Answer Extractor did not find a match for input regex in {}".format(query))
+            print(
+                "Answer Extractor did not find a match for input regex in {}".format(query))
             return []
 
 
@@ -284,7 +295,8 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
             "question_or_last_generated_sentence",
         ), f"query_source {query_source} not among the valid choices."
 
-        assert document_type in ("title", "paragraph_text", "title_paragraph_text")
+        assert document_type in (
+            "title", "paragraph_text", "title_paragraph_text")
 
         self.valid_titles_are_allowed_titles = valid_titles_are_allowed_titles
         if valid_titles_are_allowed_titles:
@@ -312,7 +324,8 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
         self.num_calls = 0
 
         if self.return_pids and self.return_paras:
-            raise Exception("Only one of return_pids or return_paras should be true.")
+            raise Exception(
+                "Only one of return_pids or return_paras should be true.")
 
         if allowed_paragraph_types:
             assert isinstance(allowed_paragraph_types, list)
@@ -322,9 +335,11 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
 
         if retrieval_type == "bm25":
             if self.retrieval_count is None:
-                raise Exception(f"retrieval_count is needed for the retrieval_type {retrieval_type}.")
+                raise Exception(
+                    f"retrieval_count is needed for the retrieval_type {retrieval_type}.")
             if self.source_corpus_name is None:
-                raise Exception(f"source_corpus_name is needed for the retrieval_type {retrieval_type}.")
+                raise Exception(
+                    f"source_corpus_name is needed for the retrieval_type {retrieval_type}.")
 
         self.retrieval_failures_so_far = 0
         self.retrieval_failures_max = 9
@@ -343,8 +358,10 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
             # add question to query only if generated sentences are empty. O/w use last_generated_sentence.
             question = state.data["question"]
             generated_sentences = state.data.get("generated_sentences", [])
-            generated_sentences = remove_reasoning_sentences(generated_sentences)
-            last_generated_sentence_str = generated_sentences[-1].strip() if generated_sentences else ""
+            generated_sentences = remove_reasoning_sentences(
+                generated_sentences)
+            last_generated_sentence_str = generated_sentences[-1].strip(
+            ) if generated_sentences else ""
             input_query = last_generated_sentence_str if last_generated_sentence_str else question
         else:
             raise Exception(f"Unknown query_source: {self.query_source}.")
@@ -362,7 +379,8 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
                 # Assuming input_query will be of form: '["title3", "title7"]''
                 generated_titles = json.loads(input_query)
             except:
-                generated_titles = [e.strip() for e in input_query.strip().replace('"', "").replace("[", "").replace("]", "").split(",")]
+                generated_titles = [e.strip() for e in input_query.strip().replace(
+                    '"', "").replace("[", "").replace("]", "").split(",")]
 
             for generated_title in generated_titles:
 
@@ -374,7 +392,8 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
                     "document_type": "title",
                     "corpus_name": self.source_corpus_name,
                 }
-                url = self.retriever_host.rstrip("/") + ":" + str(self.retriever_port) + "/retrieve"
+                url = self.retriever_host.rstrip(
+                    "/") + ":" + str(self.retriever_port) + "/retrieve"
                 result = safe_post_request(url, params)
 
                 locally_mapped_titles = set()
@@ -388,12 +407,14 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
 
                     for retrieval_ in retrieval:
                         selected_title = retrieval_["title"]
-                        selected_para = retrieval_.get("paragraph_text", "")  # backoff for natcq
+                        selected_para = retrieval_.get(
+                            "paragraph_text", "")  # backoff for natcq
 
                         locally_mapped_titles.add(selected_title)
 
                         if len(selected_para.split(" ")) > 600 and not self.dont_skip_long_paras:
-                            print("WARNING: Discarding a retrieved paragraph as it's excessively long.")
+                            print(
+                                "WARNING: Discarding a retrieved paragraph as it's excessively long.")
                             continue
 
                         if retrieval_["corpus_name"] != self.source_corpus_name:
@@ -409,8 +430,10 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
                 else:
                     self.retrieval_failures_so_far += 1
                     if self.retrieval_failures_so_far > self.retrieval_failures_max:
-                        raise Exception(f"Retrieval failure exceeded max allowed times ({self.retrieval_failures_so_far} > {self.retrieval_failures_max})")
-                    print(f"WARNING: Retrieval of titles did not succeed {self.retrieval_failures_so_far} times. Skipping it.")
+                        raise Exception(
+                            f"Retrieval failure exceeded max allowed times ({self.retrieval_failures_so_far} > {self.retrieval_failures_max})")
+                    print(
+                        f"WARNING: Retrieval of titles did not succeed {self.retrieval_failures_so_far} times. Skipping it.")
 
             if self.set_result_as_valid_titles:
                 state.data["valid_titles"] = selected_titles
@@ -430,7 +453,8 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
             for allowed_paragraph_type in self.allowed_paragraph_types:
 
                 if allowed_paragraph_type is not None:
-                    params["allowed_paragraph_types"] = [allowed_paragraph_type]
+                    params["allowed_paragraph_types"] = [
+                        allowed_paragraph_type]
 
                 if not input_query.strip():
                     # can happen when query is based on last cot gen
@@ -443,8 +467,10 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
                 if self.valid_titles_are_allowed_titles:
                     params["allowed_titles"] = state.data["valid_titles"]
 
-                url = self.retriever_host.rstrip("/") + ":" + str(self.retriever_port) + "/retrieve"
-                logger.debug(f"Retrieving paragraphs from {LYELLOW}{url}{RESET} with params {LYELLOW}{json.dumps(params, indent=4)}{RESET}")
+                url = self.retriever_host.rstrip(
+                    "/") + ":" + str(self.retriever_port) + "/retrieve"
+                logger.debug(
+                    f"Retrieving paragraphs from {LYELLOW}{url}{RESET} with params {LYELLOW}{json.dumps(params, indent=4)}{RESET}")
                 result = safe_post_request(url, params)
 
                 if result.ok:
@@ -452,15 +478,18 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
                     retrieval = result["retrieval"]
 
                     if logger.getEffectiveLevel() <= logging.DEBUG:
-                        iterable = tqdm(retrieval, desc="Processing retrieval items", total=len(retrieval))
+                        iterable = tqdm(
+                            retrieval, desc="Processing retrieval items", total=len(retrieval))
                     else:
                         iterable = retrieval
                     for retrieval_item in iterable:
                         if retrieval_item["corpus_name"] != self.source_corpus_name:
-                            raise Exception(f"The retrieved corpus name {retrieval_item['corpus_name']} "f"doesn't match {self.source_corpus_name}.")
+                            raise Exception(
+                                f"The retrieved corpus name {retrieval_item['corpus_name']} "f"doesn't match {self.source_corpus_name}.")
 
                         if len(retrieval_item["paragraph_text"].split(" ")) > 600 and not self.dont_skip_long_paras:
-                            logger.warning("WARNING: Discarding a retrieved paragraph as it's excessively long.")
+                            logger.warning(
+                                "WARNING: Discarding a retrieved paragraph as it's excessively long.")
                             continue
 
                         if is_para_closely_matching(selected_titles, selected_paras, retrieval_item["title"], retrieval_item["paragraph_text"],):
@@ -470,7 +499,8 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
                             continue
 
                         if self.valid_titles_are_allowed_titles:
-                            assert retrieval_item["title"].lower().replace(" ", "") in [valid_title.lower().replace(" ", "") for valid_title in state.data["valid_titles"]]
+                            assert retrieval_item["title"].lower().replace(" ", "") in [valid_title.lower(
+                            ).replace(" ", "") for valid_title in state.data["valid_titles"]]
 
                         selected_titles.append(retrieval_item["title"])
                         selected_paras.append(retrieval_item["paragraph_text"])
@@ -478,24 +508,30 @@ class RetrieveAndResetParagraphsParticipant(ParticipantModel):
                 else:
                     self.retrieval_failures_so_far += 1
                     if self.retrieval_failures_so_far > self.retrieval_failures_max:
-                        raise Exception(f"Retrieval failure exceeded max allowed times ({self.retrieval_failures_so_far} > {self.retrieval_failures_max})")
-                    logger.warning(f"WARNING: Retrieval of titles did not succeed {self.retrieval_failures_so_far} times. Skipping it.")
+                        raise Exception(
+                            f"Retrieval failure exceeded max allowed times ({self.retrieval_failures_so_far} > {self.retrieval_failures_max})")
+                    logger.warning(
+                        f"WARNING: Retrieval of titles did not succeed {self.retrieval_failures_so_far} times. Skipping it.")
 
         else:
-            raise Exception(f"retrieval_type must be one of 'map_generated_to_valid_titles', 'bm25'. Found {self.retrieval_type}.")
+            raise Exception(
+                f"retrieval_type must be one of 'map_generated_to_valid_titles', 'bm25'. Found {self.retrieval_type}.")
 
         self.num_calls += 1
 
         answer = json.dumps(selected_titles)  # TODO
         if self.return_pids:
-            pids = [get_pid_for_title_paragraph_text(title, paragraph_text) for title, paragraph_text in zip(selected_titles, selected_paras)]
+            pids = [get_pid_for_title_paragraph_text(
+                title, paragraph_text) for title, paragraph_text in zip(selected_titles, selected_paras)]
             answer = json.dumps(pids)
         if self.return_paras:
-            answer = json.dumps([{"title": title, "paragraph_text": para} for title, para in zip(selected_titles, selected_paras)])
+            answer = json.dumps([{"title": title, "paragraph_text": para}
+                                for title, para in zip(selected_titles, selected_paras)])
 
         new_state = state.copy()
         logger.debug(f"Adding answer: {LYELLOW}{answer}{RESET}")
-        new_state.data.add_answer(QuestionAnsweringStep(answer=answer, score=0, participant=state.next))
+        new_state.data.add_answer(QuestionAnsweringStep(
+            answer=answer, score=0, participant=state.next))
         new_state.next = self.next_model if self.next_model else self.end_state
 
         if not self.dont_add_to_state:
@@ -535,12 +571,14 @@ class CopyQuestionParticipant(ParticipantModel):
         self.num_calls += 1
 
         new_state = state.copy()
-        new_state.data.add_qgen(QuestionGenerationStep(question=output, score=0, participant=state.next))
+        new_state.data.add_qgen(QuestionGenerationStep(
+            question=output, score=0, participant=state.next))
 
         if output == self.end_state:
             new_state.next = self.end_state
         else:
-            new_state.data.add_task(Task(task_question=None, task_participant=new_state.next))
+            new_state.data.add_task(
+                Task(task_question=None, task_participant=new_state.next))
             new_state.next = self.next_model
 
         return [new_state]
@@ -581,9 +619,11 @@ class StepByStepLLMTitleGenParticipant(ParticipantModel):
         self.show_so_far_cot = show_so_far_cot
 
         tpc_combination = "".join(
-            ("Y" if show_so_far_titles else "N", "Y" if show_so_far_paras else "N", "Y" if show_so_far_cot else "N")
+            ("Y" if show_so_far_titles else "N",
+             "Y" if show_so_far_paras else "N", "Y" if show_so_far_cot else "N")
         )
-        valid_tpc_combinations = ("NNN", "NYN", "NNY", "YNY", "YNN", "YYN", "YYY")
+        valid_tpc_combinations = (
+            "NNN", "NYN", "NNY", "YNY", "YNN", "YYN", "YYY")
         # The NNN and NYN are only for the base condition, when no contextual info is available
         # NNN when paras are not pinned, NYN when they are pinned.
         assert tpc_combination in valid_tpc_combinations, f"given tpc_combination ({tpc_combination}) is not valid."
@@ -614,29 +654,38 @@ class StepByStepLLMTitleGenParticipant(ParticipantModel):
 
         paras_text = ""
         if self.show_so_far_paras:
-            zipped_titles_paras = list(zip(state.data["titles"], state.data["paras"]))
-            paragraphs = [para_to_text(title, para, self.max_para_num_words) for title, para in zipped_titles_paras]
+            zipped_titles_paras = list(
+                zip(state.data["titles"], state.data["paras"]))
+            paragraphs = [para_to_text(title, para, self.max_para_num_words)
+                          for title, para in zipped_titles_paras]
             paras_text = "\n\n".join(paragraphs).strip()
             if not paragraphs:
-                logger.warnings("WARNING: Found a case of non-contexual question on contextual prompt. Prompt isn't 'trained' for it.")
+                logger.warnings(
+                    "WARNING: Found a case of non-contexual question on contextual prompt. Prompt isn't 'trained' for it.")
 
         titles_text = ""
         if self.show_so_far_titles:
-            so_far_titles = list(dict.fromkeys(state.data.get("titles", [])).keys())
+            so_far_titles = list(dict.fromkeys(
+                state.data.get("titles", [])).keys())
             if so_far_titles:
                 titles_text = "So far collected Wikipedia page titles: "
-                titles_text += "[" + ", ".join(['"' + str(e) + '"' for e in so_far_titles]) + "]"
+                titles_text += "[" + \
+                    ", ".join(
+                        ['"' + str(e) + '"' for e in so_far_titles]) + "]"
             else:
-                logger.warning("WARNING: Found a case of non-contexual question on contextual prompt. Prompt isn't 'trained' for it.")
+                logger.warning(
+                    "WARNING: Found a case of non-contexual question on contextual prompt. Prompt isn't 'trained' for it.")
                 titles_text = "So far no wikipedia page titles have been collected."
 
         cot_text = ""
         if self.show_so_far_cot:
-            so_far_cot = " ".join(state.data.get("generated_sentences", [])).strip()
+            so_far_cot = " ".join(state.data.get(
+                "generated_sentences", [])).strip()
             if so_far_cot:
                 cot_text = f"So far collected evidence: {so_far_cot}"
             else:
-                logger.warning("WARNING: Found a case of non-contexual question on contextual prompt. Prompt isn't 'trained' for it.")
+                logger.warning(
+                    "WARNING: Found a case of non-contexual question on contextual prompt. Prompt isn't 'trained' for it.")
                 cot_text = "So far no evidence has been collected."
 
         multihop_question = state.data["question"]
@@ -650,7 +699,8 @@ class StepByStepLLMTitleGenParticipant(ParticipantModel):
                 f"generate titles of {self.retrieval_count} additional Wikipedia pages that have relevant information to answer this question."
             )
 
-        test_example_str = "\n\n".join([paras_text, titles_text + "\n" + cot_text, question_text]).strip()
+        test_example_str = "\n\n".join(
+            [paras_text, titles_text + "\n" + cot_text, question_text]).strip()
         test_example_str += "\n" + "A: "
         test_example_str = re.sub(r"\n\n+", "\n\n", test_example_str)
 
@@ -659,12 +709,14 @@ class StepByStepLLMTitleGenParticipant(ParticipantModel):
         output_text_scores = self.generator.generate_text_sequence(prompt)
 
         if len(output_text_scores) > 1:
-            print("Can not handle more than one answer for this model yet" + "\n" + str(output_text_scores))
+            print("Can not handle more than one answer for this model yet" +
+                  "\n" + str(output_text_scores))
 
         generated_titles_str = output_text_scores[0][0].strip()
 
         new_state = state.copy()
-        new_state.data.add_answer(QuestionAnsweringStep(answer=generated_titles_str, score=0, participant=state.next))
+        new_state.data.add_answer(QuestionAnsweringStep(
+            answer=generated_titles_str, score=0, participant=state.next))
         new_state.next = self.next_model if self.next_model else self.end_state
 
         self.num_calls += 1
@@ -700,7 +752,8 @@ class StepByStepCOTGenParticipant(ParticipantModel):
         **kwargs,
     ):
 
-        import spacy  # Kept here because it's almost always not required, and it's slow.
+        # Kept here because it's almost always not required, and it's slow.
+        import spacy
 
         self.num_calls = 0
         self.next_model = next_model
@@ -709,10 +762,11 @@ class StepByStepCOTGenParticipant(ParticipantModel):
         if prompt_file:
             prompt_reader_args = prompt_reader_args or {}
             prompt_reader_args["file_path"] = prompt_file
-            logger.info(f"Reading prompt from {LYELLOW}{prompt_file}{RESET}")
+            logger.info(f"Reading prompt from: {LGREEN}{prompt_file}{RESET}")
             self.prompt = read_prompt(**prompt_reader_args)
         else:
-            logger.warning("WARNING: Using StepByStepCOTGenParticipant without any prompt.")
+            logger.warning(
+                "WARNING: Using StepByStepCOTGenParticipant without any prompt.")
             self.prompt = ""
 
         self.max_para_num_words = max_para_num_words
@@ -759,13 +813,15 @@ class StepByStepCOTGenParticipant(ParticipantModel):
         if f"generated_{self.generation_type}" not in state.data:
             state.data[f"generated_{self.generation_type}"] = []
 
-        if len(state.data[f"generated_{self.generation_type}"]) >= self.max_num_sentences:  # TODO if generate_sentences > max_num_sentences
+        # TODO if generate_sentences > max_num_sentences
+        if len(state.data[f"generated_{self.generation_type}"]) >= self.max_num_sentences:
             exit_generation = True
 
         new_state = state.copy()
         return_answer = "EMPTY"
         return_titles = json.dumps(state.data["titles"])
-        return_pids = json.dumps([get_pid_for_title_paragraph_text(title, paragraph_text) for title, paragraph_text in zip(state.data["titles"], state.data["paras"])])
+        return_pids = json.dumps([get_pid_for_title_paragraph_text(title, paragraph_text)
+                                 for title, paragraph_text in zip(state.data["titles"], state.data["paras"])])
         # use this (^|v) as we don't want pinned to be part of returned titles/paras.
 
         # Don't bother wasting expensive llm call if we're already going to exist afterwards.
@@ -782,39 +838,49 @@ class StepByStepCOTGenParticipant(ParticipantModel):
             if self.shuffle_paras:
                 random.shuffle(zipped_titles_paras)
 
-            context = "\n\n".join([para_to_text(title, para, self.max_para_num_words) for title, para in zipped_titles_paras])
-            generation_so_far = " ".join(state.data[f"generated_{self.generation_type}"])
+            context = "\n\n".join([para_to_text(
+                title, para, self.max_para_num_words) for title, para in zipped_titles_paras])
+            generation_so_far = " ".join(
+                state.data[f"generated_{self.generation_type}"])
 
             if self.question_prefix:
-                assert self.question_prefix.endswith("\n") or self.question_prefix.endswith(" ")
+                assert self.question_prefix.endswith(
+                    "\n") or self.question_prefix.endswith(" ")
                 question = self.question_prefix + question
 
             if self.add_context:
-                test_example_str = context + "\n\n" + f"Q: {question}" + "\n" + f"A: {generation_so_far}"
+                test_example_str = context + "\n\n" + \
+                    f"Q: {question}" + "\n" + f"A: {generation_so_far}"
             else:
-                test_example_str = f"Q: {question}" + "\n" + f"A: {generation_so_far}"
+                test_example_str = f"Q: {question}" + \
+                    "\n" + f"A: {generation_so_far}"
 
             prompt = "\n\n\n".join([self.prompt, test_example_str]).strip()
 
-            output_text_scores = self.generator.generate_text_sequence(prompt)  # TODO 生成文本
+            output_text_scores = self.generator.generate_text_sequence(
+                prompt)  # TODO 生成文本
             if len(output_text_scores) > 1:
-                print("Can not handle more than one answer for this model yet" + "\n" + str(output_text_scores))
+                print("Can not handle more than one answer for this model yet" +
+                      "\n" + str(output_text_scores))
 
             # 使用spacy分句
             new_generation = output_text_scores[0][0].strip()
             new_sents = list(self.spacy_object(new_generation).sents)
             if new_sents:
                 new_generation = new_sents[0].text
-                new_state.data[f"generated_{self.generation_type}"].append(new_generation)
+                new_state.data[f"generated_{self.generation_type}"].append(
+                    new_generation)
 
                 if self.answer_extractor_regex.match(new_generation):
-                    return_answer = self.answer_extractor_regex.match(new_generation).group(1)
+                    return_answer = self.answer_extractor_regex.match(
+                        new_generation).group(1)
                     if self.answer_extractor_remove_last_fullstop and return_answer.endswith("."):
                         return_answer = return_answer[:-1]
                     exit_generation = True
             else:
                 if self.disable_exit:  # Add just empty sentence so exit controller can exit.
-                    new_state.data[f"generated_{self.generation_type}"].append("")
+                    new_state.data[f"generated_{self.generation_type}"].append(
+                        "")
                 exit_generation = True
 
         if self.disable_exit:
@@ -838,16 +904,19 @@ class StepByStepCOTGenParticipant(ParticipantModel):
         else:
 
             # It should output full COT so far, not just what's generated in this round.
-            output = " ".join(new_state.data[f"generated_{self.generation_type}"])
+            output = " ".join(
+                new_state.data[f"generated_{self.generation_type}"])
             new_state.next = self.next_model
 
         if self.reset_queries_as_sentences:
             # deepcopy is necessary
-            new_state.data["generated_queries"] = copy.deepcopy(new_state.data["generated_sentences"])
+            new_state.data["generated_queries"] = copy.deepcopy(
+                new_state.data["generated_sentences"])
 
         assert isinstance(output, str), 'output must be a string.'
         logger.debug(f"Adding answer: {LYELLOW}{output}{RESET}")
-        new_state.data.add_answer(QuestionAnsweringStep(answer=output, score=0, participant=state.next))
+        new_state.data.add_answer(QuestionAnsweringStep(
+            answer=output, score=0, participant=state.next))
 
         self.num_calls += 1
 
@@ -873,7 +942,8 @@ class StepByStepExitControllerParticipant(ParticipantModel):
         end_state="[EOQ]",
     ):
         if terminal_return_type not in ("answer", "titles", "pids"):
-            raise Exception(f"terminal_return_type has to be one of answer or titles. Found {terminal_return_type}.")
+            raise Exception(
+                f"terminal_return_type has to be one of answer or titles. Found {terminal_return_type}.")
 
         self.num_calls = 0
         self.answer_extractor_regex = re.compile(answer_extractor_regex)
@@ -890,7 +960,8 @@ class StepByStepExitControllerParticipant(ParticipantModel):
         return {"step_by_step_exit_controller": self.num_calls}
 
     def query(self, state, debug=False):
-        logger.debug(f"Run step by step exit controller for {self.generation_key}")
+        logger.debug(
+            f"Run step by step exit controller for {self.generation_key}")
         if self.generation_key not in state.data:
             state.data[self.generation_key] = []
         generated_sentences = state.data[self.generation_key]
@@ -923,12 +994,13 @@ class StepByStepExitControllerParticipant(ParticipantModel):
             return_answer = " ".join(generated_sentences)
 
         if generated_sentences and self.answer_extractor_regex.match(generated_sentences[-1]):
-            return_answer = self.answer_extractor_regex.match(generated_sentences[-1]).group(1)
+            return_answer = self.answer_extractor_regex.match(
+                generated_sentences[-1]).group(1)
             if self.answer_extractor_remove_last_fullstop and return_answer.endswith("."):
                 return_answer = return_answer[:-1]
             exit_generation = True
 
-        if exit_generation: # 退出交错过程
+        if exit_generation:  # 退出交错过程
             if self.terminal_return_type == "answer":  # answer
                 output = return_answer
             elif self.terminal_return_type == "pids":  # pids
@@ -941,12 +1013,13 @@ class StepByStepExitControllerParticipant(ParticipantModel):
                 new_state.next = self.terminal_state_next_model
             else:
                 new_state.next = self.end_state
-        else: # 不退出交出过程
+        else:  # 不退出交出过程
             output = "Exit? No."
             new_state.next = self.next_model
 
         assert isinstance(output, str)
-        new_state.data.add_answer(QuestionAnsweringStep(answer=output, score=0, participant=state.next))
+        new_state.data.add_answer(QuestionAnsweringStep(
+            answer=output, score=0, participant=state.next))
 
         self.num_calls += 1
 

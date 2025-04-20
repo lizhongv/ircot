@@ -1,0 +1,700 @@
+
+5ae28c0a554299495565daaa
+What is the length of the river into which Pack Creek runs after it goes through the Spanish Valley? 
+Q: What is the length of the river into which Pack Creek runs after it goes through the Spanish Valley?
+A: "To answer the question accurately, we need more specific information about the Pack Creek and Spanish Valley in question, as there could be multiple creeks and valleys with these names in different locations."
+Q: [EOQ]
+S: 0.0
+
+5a8ed8b955429917b4a5bdd3
+North Midland Divisional Engineers took part in a battle during WWII that went on for how many weeks ?
+Q: North Midland Divisional Engineers took part in a battle during WWII that went on for how many weeks ?
+A: "The North Midland Divisional Engineers were part of the Anglo-French campaign in the Battle of France, which lasted for approximately 5 weeks (from May 10 to June 22, 1940)."
+Q: [EOQ]
+S: 0.0
+
+5ae25c815542992decbdcccc
+What trio was the songwriter of "What Are We Doin' Lonesome" from?
+Q: What trio was the songwriter of "What Are We Doin' Lonesome" from?
+A: "According to the song credits, \"What Are We Doin' Lonesome\" was written by the country music duo Hank Williams Jr. and Alan Jackson, often referred to as the duo Hank Jr. & Alan. However, if you're looking for a trio, it might be referring to Hank Williams Jr., Alan Jackson, and Johnny Van Zandt (the latter two being the backing musicians on the song). But strictly based on the writing credits, it's a duo. If you need a trio, more context would be helpful."
+Q: [EOQ]
+S: 0.0
+
+5ae12a4b55429920d52342df
+Baraki Barak District is situated in the western part of a province whose capital is what?
+Q: Baraki Barak District is situated in the western part of a province whose capital is what?
+A: "Toanswer the question, I need to know which province you are referring to. However, based on the information you've given, Baraki Barak District is located in the western part of Afghanistan, and the capital of Afghanistan is Kabul. Therefore, if you meant to ask about the province where Baraki Barak District is located, the answer would be Kabul."
+Q: [EOQ]
+S: 0.0
+
+5a81b99c5542995ce29dcc56
+Atlas Shrugged was a film based on the books by a proponent of what philosophy?
+Q: Atlas Shrugged was a film based on the books by a proponent of what philosophy?
+A: "Atlas Shrugged was a film based on the books by Ayn Rand, a proponent of Objectivism."
+Q: [EOQ]
+S: 0.0
+
+5ab29486554299545a2cf9a4
+Which has more members, Dada or Alt-J?
+Q: Which has more members, Dada or Alt-J?
+A: "Alt-J has more members. Dada is typically associated with an artistic movement and not a music group, while Alt-J is a British indie rock band that has 4 members."
+Q: [EOQ]
+S: 0.0
+
+5ab736a65542992aa3b8c7db
+ "She's a Mystery to Me" is a song on an album released in 1989 by what label?
+Q: "She's a Mystery to Me" is a song on an album released in 1989 by what label?
+A: "A: A&M Records"
+Q: [EOQ]
+S: 0.0
+
+5ab90d8955429916710eb0f1
+Jalen Jones plays basketball for an NBA team that plays their home games in what arena?
+Q: Jalen Jones plays basketball for an NBA team that plays their home games in what arena?
+A: "TD Garden"
+Q: [EOQ]
+S: 0.0
+
+5ae0aaf35542993d6555ec02
+What was the former name of the stadium, from 1997-2017, where the Aztecs play?
+Q: What was the former name of the stadium, from 1997-2017, where the Aztecs play?
+A: "Jack Dempsey Stadium"
+Q: [EOQ]
+S: 0.0
+
+5ac344d6554299741d48a23f
+What is the gross leasable area of the shopping mall served by the Merrick Boulevard buses?
+Q: What is the gross leasable area of the shopping mall served by the Merrick Boulevard buses?
+A: "The question as stated does not provide enough specific information about which shopping mall is being referred to. However, if we are to answer based on a typical scenario involving the Merrick Boulevard buses in New York City, the shopping mall in question is typically Westbury Garden State Plaza. Westbury Garden State Plaza is approximately 582,000 square feet in gross leasable area."
+Q: [EOQ]
+S: 0.0
+
+5ac2cb125542996773102626
+Are both Leycesteria and Anigozanthos native to Australia?
+Q: Are both Leycesteria and Anigozanthos native to Australia?
+A: "No, both Leycesteria and Anigozanthos are not native to Australia. Leycesteria is native to parts of Asia, while Anigozanthos, commonly known as kangaroo paws, is native to Australia. However, Leycesteria is more widespread in countries like China and Japan."
+Q: [EOQ]
+S: 0.0
+
+5abb02fe554299232ef4a39f
+Anna Aglatova made her first public appearance at which Moscow theatre in 2005?
+Q: Anna Aglatova made her first public appearance at which Moscow theatre in 2005?
+A: "Moscow Academic Drama Theatre named after A. S. Griboyedov"
+Q: [EOQ]
+S: 0.0
+
+5ae4bc7955429913cc2044e9
+To which competition did the University at Albany, SUNY send a Puerto Rican hurdler and sprinter?
+Q: To which competition did the University at Albany, SUNY send a Puerto Rican hurdler and sprinter?
+A: "To which competition did the University at Albany, SUNY send a Puerto Rican hurdler and sprinter?"
+Q: [EOQ]
+S: 0.0
+
+5a7b1c745542992d025e6777
+What was unique about the attraction that was replaced by Monsters, Inc. Laughing Floor on April 2,2007?
+Q: What was unique about the attraction that was replaced by Monsters, Inc. Laughing Floor on April 2,2007?
+A: "The attraction that was replaced by Monsters, Inc. Laughing Floor on April 2, 2007, was unique because it was the original Singing In The RainSocketAddress ride, which was the first indoor, motion-simulated attraction at Disney's Hollywood Studios. It simulated that you were flying through movie scenes from Vincente Minnelli's 1952 musical film \"Singing in the Rain.\""
+Q: [EOQ]
+S: 0.0
+
+5abd583255429924427fcfb9
+Both Olaf Eller and Lars Eller are involved in which sport?
+Q: Both Olaf Eller and Lars Eller are involved in which sport?
+A: "Both Olaf Eller and Lars Eller are involved in hockey."
+Q: [EOQ]
+S: 0.0
+
+5a7621bb554299109176e650
+ Which album did the band Kraftwerk release after their successful album which reached number 25 on the US "Billboard" Hot 100 chart?
+Q: Which album did the band Kraftwerk release after their successful album which reached number 25 on the US "Billboard" Hot 100 chart?
+A: "To answer the question, I need to know which successful album by Kraftwerk reached number 25 on the US Billboard Hot 100 chart. The album that fits this description is \"Computer World,\" released in 1981. Therefore, after \"Computer World,\" Kraftwerk released the album \"Computer World\" (yes, it's the same album, but in the context of another album that followed it chronologically, it would be the next one in their discography). The correct answer would depend on the next album in their discography, which is \"Electric Cafe\" (1986)."
+Q: [EOQ]
+S: 0.0
+
+5ae048a255429924de1b708e
+What movie did Pitof direct which had an action-adventure tie-in video game based off of it in 2004?
+Q: What movie did Pitof direct which had an action-adventure tie-in video game based off of it in 2004?
+A: "The movie directed by Pitof that had an action-adventure tie-in video game based off of it in 2004 was \"The Condor trilogy: Legend of Sidney.\" However, it's more commonly known as \"Kung FuKick\" in the United States."
+Q: [EOQ]
+S: 0.0
+
+5a7302b75542991f9a20c5fd
+What supernatural horror film did Miles Doleac have a role in?
+Q: What supernatural horror film did Miles Doleac have a role in?
+A: "It's not possible for me to answer the question without knowing which supernatural horror film Miles Doleac had a role in. You haven't provided that information. Could you please specify the film?"
+Q: [EOQ]
+S: 0.0
+
+5ab428915542991751b4d6b2
+Who acted in the film and television series, "Harry and the Hendersons," and also worked with Danny Glover?
+Q: Who acted in the film and television series, "Harry and the Hendersons," and also worked with Danny Glover?
+A: "JoBeth Williams"
+Q: [EOQ]
+S: 0.0
+
+5a84bbb35542991dd0999dc0
+Mother and daughter duo Indian actresses appear in which type of films
+Q: Mother and daughter duo Indian actresses appear in which type of films
+A: "Indian Mother and daughter duos typically appear in Bollywood films, which are Hindi-language films produced in Mumbai (formerly known as Bombay), and more broadly, in Indian cinema as a whole."
+Q: [EOQ]
+S: 0.0
+
+5ae4988655429970de88d9c1
+Which is a post-punk band, Boy Hits Car or The The?
+Q: Which is a post-punk band, Boy Hits Car or The The?
+A: "Boy Hits Car"
+Q: [EOQ]
+S: 0.0
+
+5ae0198455429942ec259c1e
+How many times did the man who coached the 1986-87 UNLV Runnin' Rebels fail to win 20 games in a season?
+Q: How many times did the man who coached the 1986-87 UNLV Runnin' Rebels fail to win 20 games in a season?
+A: "To answer this question accurately, I need to know which coach is being referred to. The question mentions the 1986-87 UNLV Runnin' Rebels, which were coached by Jerry Tarkanian. If you could provide the name of the other coach, I would be able to give you the correct answer. Without that information, I cannot complete the answer."
+Q: [EOQ]
+S: 0.0
+
+5adf123f5542995ec70e8f63
+Who are the executive producer of the Adult Swim skit show that Odd Future had?
+Q: Who are the executive producer of the Adult Swim skit show that Odd Future had?
+A: "The executive producers of the Adult Swim skit show that Odd Future had on are Andy={$\\mathrm{H _$\\mathrm{el}_\\mathrm{l}$}\\_andy} and A.C. TAG. However, A.C. TAG is actually not a person but an acronym for \"Another Content: The Anonymous Group,\" which refers to a\u96c6\u4f53\u521b\u4f5c\u56e2\u961f\u3002\u6b63\u786e\u7684\u56de\u7b54\u5e94\u8be5\u662fAndy \u66fc\u5b81\uff08Andy Manning\uff09\u548c A.C. TAG\u3002"
+Q: [EOQ]
+S: 0.0
+
+5a7b81715542997c3ec971d4
+The author of the "The Dagger and the Coin" fantasy series was nominated for what award in 2017?
+Q: The author of the "The Dagger and the Coin" fantasy series was nominated for what award in 2017?
+A: "The author of the \"The Dagger and the Coin\" fantasy series was nominated for the Arthur C. Clarke Award in 2017. The author in question is J.V. Jones."
+Q: [EOQ]
+S: 0.0
+
+5ae3dce45542994393b9e783
+Oak Beach, New York and Great South Bay are both situated between what same island?
+Q: Oak Beach, New York and Great South Bay are both situated between what same island?
+A: "Long Island"
+Q: [EOQ]
+S: 0.0
+
+5a8c4c625542995e66a475a1
+Which airplane was this Major test-flying after whom the base, that 514th Flight Test Squadron is stated at, is named?
+Q: Which airplane was this Major test-flying after whom the base, that 514th Flight Test Squadron is stated at, is named?
+A: "To answer this question accurately, we need more specific details such as the name of the base where the 514th Flight Test Squadron is stationed. However, based on the information provided, the base in question is named after a Major who was a test pilot. Without the name of the base, it's challenging to determine which specific airplane the Major was testing."
+Q: [EOQ]
+S: 0.0
+
+5ab874ba5542990e739ec904
+The Twelfth United States Army Group commander was the first chairman of what?
+Q: The Twelfth United States Army Group commander was the first chairman of what?
+A: "The United States European Command (USEUCOM)"
+Q: [EOQ]
+S: 0.0
+
+5ade881f5542992fa25da7af
+Heinrich Scholz was a peer of what English computer scientist, mathematician, logician, cryptanalyst, philosopher and theoretical biologist?
+Q: Heinrich Scholz was a peer of what English computer scientist, mathematician, logician, cryptanalyst, philosopher and theoretical biologist?
+A: "Alan Mathison Turing"
+Q: [EOQ]
+S: 0.0
+
+5a7da6015542995f4f40229d
+What was the third studio album released by Richard Melville Hall?
+Q: What was the third studio album released by Richard Melville Hall?
+A: "Yeezus"
+Q: [EOQ]
+S: 0.0
+
+5a80f42b55429938b614226c
+When was the medieval fortress abandoned that is to the north of Yellowcraig?
+Q: When was the medieval fortress abandoned that is to the north of Yellowcraig?
+A: "The information provided does not give a specific date for when the medieval fortress north of Yellowcraig was abandoned. Without additional context or research, it's not possible to accurately state when it was abandoned."
+Q: [EOQ]
+S: 0.0
+
+5a73090455429901807daf6e
+Vocelli Pizza and Noble Roman's serve which kind of food?
+Q: Vocelli Pizza and Noble Roman's serve which kind of food?
+A: "Vocelli Pizza and Noble Roman's serve pizza."
+Q: [EOQ]
+S: 0.0
+
+5ae377415542992e3233c40a
+Which author was a dentist, Zane Grey or Bhabananda Deka?
+Q: Which author was a dentist, Zane Grey or Bhabananda Deka?
+A: "Zane Grey"
+Q: [EOQ]
+S: 0.0
+
+5a78f59755429970f5fffdf7
+Mick Carter is the landlord of a public house located at what address?
+Q: Mick Carter is the landlord of a public house located at what address?
+A: "29 Able Lane, Salford, Manchester, England."
+Q: [EOQ]
+S: 0.0
+
+5abc817c5542993a06baf8fd
+"This Ole House" topped the UK chart in 1981 in a recording by a platinum-selling British rock and roll singer whose recording and performing career began when? 
+Q: "This Ole House" topped the UK chart in 1981 in a recording by a platinum-selling British rock and roll singer whose recording and performing career began when?
+A: "\"This Ole House\" topped the UK chart in 1981 in a recording by a platinum-selling British rock and roll singer, Stoneadata, whose recording and performing career began in the early 1960s. However, Stone asteroidata is likely not the correct name, it should be \"Styx.\" Styx began their career in the early 1960s but didn't release their debut album until 1972. The song \"This Ole House\" was from their album \"Cornerstone,\" released in 1981."
+Q: [EOQ]
+S: 0.0
+
+5a8b98665542995d1e6f1413
+What is name of one of the primary holders of Schottenstein Stores Corp which was born in 1954?
+Q: What is name of one of the primary holders of Schottenstein Stores Corp which was born in 1954?
+A: "One of the primary holders of Schottenstein Stores Corp who was born in 1954 is Ron Schottenstein."
+Q: [EOQ]
+S: 0.0
+
+5abec9b25542997ec76fd366
+What city was the capital of the Ostrogothic Kingdom and the birth place of Ornella Fiorentini?
+Q: What city was the capital of the Ostrogothic Kingdom and the birth place of Ornella Fiorentini?
+A: "Rome"
+Q: [EOQ]
+S: 0.0
+
+5a8a833855429970aeb702fe
+How many rooms are in the hotel that is home to the Cirque du Soleil show Mystere?
+Q: How many rooms are in the hotel that is home to the Cirque du Soleil show Mystere?
+A: "The hotel that is home to the Cirque du Soleil show Myst\u00e8re is the Luxor Hotel in Las Vegas. The Luxor Hotel has 1,390 rooms."
+Q: [EOQ]
+S: 0.0
+
+5a79cd395542994bb94570be
+What year was the recipient of the 2016 Best Footballer in Asia born?
+Q: What year was the recipient of the 2016 Best Footballer in Asia born?
+A: "The question is incomplete as it doesn't specify which footballer received the 2016 Best Footballer in Asia award. However, based on the award winner that year, Cavalier State Footballer award went to Sun Jihai, who was born in 1988. So the answer would be 1988. If you meant a different award or a different player, please provide the correct details."
+Q: [EOQ]
+S: 0.0
+
+5a7793275542992a6e59df04
+Which country is the firm that owns Babycham located?
+Q: Which country is the firm that owns Babycham located?
+A: "United Kingdom"
+Q: [EOQ]
+S: 0.0
+
+5ab92f52554299131ca422a9
+Of what ethnicity is the founder of the Orchestra which debuted on January 1, 1988?
+Q: Of what ethnicity is the founder of the Orchestra which debuted on January 1, 1988?
+A: "To answer the question about the founder of the orchestra that debuted on January 1, 1988, we need more specific information about which orchestra is being referred to. There have been multiple orchestras founded on that date around the world. Can you provide more details or context about the orchestra in question?"
+Q: [EOQ]
+S: 0.0
+
+5a8c5d3f554299585d9e3675
+Which band formed first Cha Cha Cohen or Swervedriver?
+Q: Which band formed first Cha Cha Cohen or Swervedriver?
+A: "Swervedriver formed first. Swervedriver was formed in 1987, while Cha Cha Cohen is a solo project that started later."
+Q: [EOQ]
+S: 0.0
+
+5a85fa815542996432c57155
+Where was the movement that August Brancart published literature from centerd?
+Q: Where was the movement that August Brancart published literature from centerd?
+A: "Belgium"
+Q: [EOQ]
+S: 0.0
+
+5a72634d5542997f82783994
+what city will host the event in which marie gisele eleme asse won twoo medals in 2017
+Q: what city will host the event in which marie gisele eleme asse won twoo medals in 2017
+A: "To answer your question accurately, I would need more specific details about Marie Gisele Eleme Asse and the type of medals she won in 2017. However, based on the information provided, I cannot determine the exact city. Could you provide more context or details about the event?"
+Q: [EOQ]
+S: 0.0
+
+5ab9cfe655429970cfb8ebaf
+Walt Disney World Quest: Magical Racing Tour includes the space-themed roller coaster that was opened on what date?
+Q: Walt Disney World Quest: Magical Racing Tour includes the space-themed roller coaster that was opened on what date?
+A: "Walt Disney World Quest: Magical Racing Tour includes the space-themed roller coaster that was opened on June 15, 2018."
+Q: [EOQ]
+S: 0.0
+
+5a79f27e5542990198eaf014
+Who was born first Dame Zara Kate Bate or Harold Edward Holt?
+Q: Who was born first Dame Zara Kate Bate or Harold Edward Holt?
+A: "Harold Edward Holt"
+Q: [EOQ]
+S: 0.0
+
+5add870b5542995b365fab3c
+Which actor starred in both "The Best Years of Our Lives" in 1946 and "The Crowded Sky" in 1960?
+Q: Which actor starred in both "The Best Years of Our Lives" in 1946 and "The Crowded Sky" in 1960?
+A: "James HWND \"Dix\" Hospital Jr."
+Q: [EOQ]
+S: 0.0
+
+5a8f93f5554299458435d67e
+The name od the Jason Hook album "Safety Dunce" is a play on the words of a song released in what year? 
+Q: The name od the Jason Hook album "Safety Dunce" is a play on the words of a song released in what year?
+A: "The name of the Jason Hook album \"Safety Dunce\" is a play on the words of the song \"Safety Dance,\" which was released in 1982 by the new wave band\u0435\u0440\u0430 in 1982."
+Q: [EOQ]
+S: 0.0
+
+5a7b782455429927d897bfd7
+Staten Island Summer, starred what actress who was a cast member of "Saturday Night Live"?
+Q: Staten Island Summer, starred what actress who was a cast member of "Saturday Night Live"?
+A: "Kerri Russell"
+Q: [EOQ]
+S: 0.0
+
+5ab9b1fd5542996be202058e
+What is the most populous city in the county where Caleb Stegall served as District attorney?
+Q: What is the most populous city in the county where Caleb Stegall served as District attorney?
+A: "To answer this question accurately, we need to know the county where Caleb Stegall served as District Attorney and identify the most populous city in that county. However, Caleb Stegall is not a well-documented public figure with a widely known position as a District Attorney in a specific county. Without this information, it's impossible to determine the most populous city in the relevant county."
+Q: [EOQ]
+S: 0.0
+
+5ae375955542990afbd1e15d
+what is the group called that Dianne Morgan and Joe Wilkinson a part of in the BBC comedy "Two Episodes of Mash"
+Q: what is the group called that Dianne Morgan and Joe Wilkinson a part of in the BBC comedy "Two Episodes of Mash"
+A: "In the BBC comedy \"Two Episodes of Mash,\" Dianne Morgan and Joe Wilkinson are part of the group called \"The Cakes.\""
+Q: [EOQ]
+S: 0.0
+
+5ae2fa1b55429928c4239583
+Masters and Johnson labeled the orgasmic platform while researching what?
+Q: Masters and Johnson labeled the orgasmic platform while researching what?
+A: "sexuality and human sexual response cycles."
+Q: [EOQ]
+S: 0.0
+
+5a8347d65542996488c2e3f6
+in the 2004 Hockey film produced by a former major league baseball pitcher who played the USA coach?
+Q: in the 2004 Hockey film produced by a former major league baseball pitcher who played the USA coach?
+A: "In the 2004 hockey film \"Miracle,\" produced by Michael Gross, a former major league baseball pitcher who played for the Los Angeles Dodgers and served as their coaching staff, the USA coach was Jim Craig. Jim Craig, played by recurrent guest star Bradford Dillman, was the USA men's national ice hockey team goaltender during the 1980 Winter Olympics."
+Q: [EOQ]
+S: 0.0
+
+5ab969ca55429970cfb8eac9
+Where is Anticimex's parent company headquartered?
+Q: Where is Anticimex's parent company headquartered?
+A: "Stockholm"
+Q: [EOQ]
+S: 0.0
+
+5a8e40f65542995a26add498
+This cabin built in 1925 is located in a park encompasses over 1 million acre and includes parts of two what?
+Q: This cabin built in 1925 is located in a park encompasses over 1 million acre and includes parts of two what?
+A: "This cabin built in 1925 is located in a park that encompasses over 1 million acres and includes parts of two states. The park in question is Yellowstone National Park, which spans across Wyoming, Idaho, and Montana."
+Q: [EOQ]
+S: 0.0
+
+5ae7f7ec554299540e5a56de
+ Still Reigning is a live performance DVD that showcases an album described by Kerrang! as what?
+Q: Still Reigning is a live performance DVD that showcases an album described by Kerrang! as what?
+A: "Still Reigning is a live performance DVD that showcases an album described by Kerrang! as the \"Heaviest Album Ever Made.\" This refers to King Diamond's album \"istical,\" which is featured in the DVD."
+Q: [EOQ]
+S: 0.0
+
+5a72b8de5542994cef4bc3df
+Which runner-up from "American Idol" wrote country song "Next Boyfriend"?
+Q: Which runner-up from "American Idol" wrote country song "Next Boyfriend"?
+A: "Kellie Pickler"
+Q: [EOQ]
+S: 0.0
+
+5a832e715542990548d0b1bf
+What annual gathering that inlcudes David Starfire takes place at Black Rock City?
+Q: What annual gathering that inlcudes David Starfire takes place at Black Rock City?
+A: "What annual gathering that includes David Starfire takes place at Black Rock City? A: Burning Man"
+Q: [EOQ]
+S: 0.0
+
+5abc2e1c554299700f9d7806
+How many months apart are Johan Mjällby and Neil Lennon in age?
+Q: How many months apart are Johan Mjällby and Neil Lennon in age?
+A: "To answer this question, we need to know the birth months and years of Johan Mj\u00e4llby and Neil Lennon."
+Q: [EOQ]
+S: 0.0
+
+5a85ab905542994c784ddb35
+Two positions were filled in The Voice of Ireland b which British-Irish girl group based in London, England?
+Q: Two positions were filled in The Voice of Ireland b which British-Irish girl group based in London, England?
+A: "Two positions were filled in The Voice of Ireland for the girl group Alt pie, which is based in London, England."
+Q: [EOQ]
+S: 0.0
+
+5ac282875542996773102546
+Is James Bourne a band member of both McBusted and The Auteurs?
+Q: Is James Bourne a band member of both McBusted and The Auteurs?
+A: "No, James Bourne is a member of McBusted but not of The Auteurs."
+Q: [EOQ]
+S: 0.0
+
+5a710a915542994082a3e504
+Which of these men, Scott Treleaven and Edmund Mortimer, is credited with working in both films and photography?
+Q: Which of these men, Scott Treleaven and Edmund Mortimer, is credited with working in both films and photography?
+A: "Scott Treleaven"
+Q: [EOQ]
+S: 0.0
+
+5ae254565542992decbdccbb
+In what year was the writer of the drama "Ingenious" born?
+Q: In what year was the writer of the drama "Ingenious" born?
+A: "To answer this question accurately, we need to know the name of the writer of the drama \"Ingenious\". However, that specific information was not provided. If you can provide the name of the writer, I would be happy to help find the answer about the year they were born."
+Q: [EOQ]
+S: 0.0
+
+5ade949b5542997c77adee63
+The city Charles Prince Airport is approximately 16 km northwest of was called Salisbury until what year?
+Q: The city Charles Prince Airport is approximately 16 km northwest of was called Salisbury until what year?
+A: "The city that Charles Prince Airport is approximately 16 km northwest of was called Salisbury until 1994, when it was officially renamed St. John's."
+Q: [EOQ]
+S: 0.0
+
+5a7c67c15542990527d55498
+Who was the electoral division that James Tully  represented in 1928 named after?
+Q: Who was the electoral division that James Tully  represented in 1928 named after?
+A: "To answer this question accurately, we need more specific information about James Tully and the electoral division he represented in 1928. Without this context, it's not possible to determine the name the electoral division was named after. If you can provide the specific name of the electoral division, I can help with the answer."
+Q: [EOQ]
+S: 0.0
+
+5a8da1815542994ba4e3dcd7
+Naseer & Shahab is a Pakistani band playing a genre that dominated radio in what decade?
+Q: Naseer & Shahab is a Pakistani band playing a genre that dominated radio in what decade?
+A: "1980s"
+Q: [EOQ]
+S: 0.0
+
+5ab529005542996a3a96a045
+In 2008, The Littlewoods Ireland Carnogie Leagues sponsor known as?
+Q: In 2008, The Littlewoods Ireland Carnogie Leagues sponsor known as?
+A: "In 2008, the sponsor of The Littlewoods Ireland Carnaby Leagues was Alliance Bet."
+Q: [EOQ]
+S: 0.0
+
+5abfd3d65542994516f4550b
+Are both Don Giovanni and Cardillac operas with three acts?
+Q: Are both Don Giovanni and Cardillac operas with three acts?
+A: "No, both \"Don Giovanni\" and \"Cardillac\" are operas, but \"Don Giovanni\" typically has three acts, while \"Cardillac\" traditionally has four acts. However, the structure can vary depending on the production and the specific version being performed."
+Q: [EOQ]
+S: 0.0
+
+5a88696b554299206df2b25b
+What type of profession does Chris Jericho and Gary Barlow have in common?
+Q: What type of profession does Chris Jericho and Gary Barlow have in common?
+A: "singer and songwriter"
+Q: [EOQ]
+S: 0.0
+
+5adfdc7d55429942ec259b64
+Who was older, George Atzerodt or Andrew Johnson?
+Q: Who was older, George Atzerodt or Andrew Johnson?
+A: "Andrew Johnson"
+Q: [EOQ]
+S: 0.0
+
+5a8901a2554299515336125a
+Ghostkeeper's plot is inspired by a legend that lends its name to what type of medical condition?
+Q: Ghostkeeper's plot is inspired by a legend that lends its name to what type of medical condition?
+A: "Ghostkeeper's plot is inspired by a legend that lends its name to a type of skin condition called \"vitiligo.\" The legend, which involves a mythical creature that can heal skin discoloration, inspired the story's theme of a ghost who helps a young girl regain her skin's color, metaphorically addressing vitiligo."
+Q: [EOQ]
+S: 0.0
+
+5a7499eb55429929fddd8470
+What game did the team with an 11-1 regular season record play in for the BCS title game?
+Q: What game did the team with an 11-1 regular season record play in for the BCS title game?
+A: "To answer your question accurately, I need to know which specific seasons and teams you're referring to. However, one notable example is the 2007 Oklahoma Sooners football team, which had an 11-1 regular season record and played in the BCS title game against Ohio State."
+Q: [EOQ]
+S: 0.0
+
+5ae824295542997ec272772f
+Dan Scalco is best known as a contributing author for a magazine owned by who?
+Q: Dan Scalco is best known as a contributing author for a magazine owned by who?
+A: "ViacomCBS"
+Q: [EOQ]
+S: 0.0
+
+5abd38285542993062266c19
+Who passed away first Max Ophüls and Shirley Clarke ?
+Q: Who passed away first Max Ophüls and Shirley Clarke ?
+A: "Max Oph\u00fcls passed away first. Max Oph\u00fcls died on May 20, 1957, while Shirley Clarke died on December 22, 1978."
+Q: [EOQ]
+S: 0.0
+
+5ae056c755429945ae959319
+James Garner had a role in the 2004 romantic drama directed by whom?
+Q: James Garner had a role in the 2004 romantic drama directed by whom?
+A: "Mike Newell"
+Q: [EOQ]
+S: 0.0
+
+5abc7d6d5542993a06baf8f3
+Kevin Yorn an American entertainment attorney who represents an Australian actor who  played the role of Josh Taylor in what soap opera?
+Q: Kevin Yorn an American entertainment attorney who represents an Australian actor who  played the role of Josh Taylor in what soap opera?
+A: "Neighbours"
+Q: [EOQ]
+S: 0.0
+
+5ab91dc555429919ba4e23b4
+What role did Slim Dunlap take when he joined the Minnesota band the Replacements in 1987?
+Q: What role did Slim Dunlap take when he joined the Minnesota band the Replacements in 1987?
+A: "guitarist"
+Q: [EOQ]
+S: 0.0
+
+5abd68b45542993062266c77
+What did the main character in Unbroken do in the Olympics?
+Q: What did the main character in Unbroken do in the Olympics?
+A: "Ran in the long-distance track events"
+Q: [EOQ]
+S: 0.0
+
+5ae362105542991a06ce99ae
+What was the size of the 1700 Cascadia earthquake predicted by Kenji Satake?
+Q: What was the size of the 1700 Cascadia earthquake predicted by Kenji Satake?
+A: "The 1700 Cascadia earthquake, as predicted by Kenji Satake and others, was estimated to have been approximately magnitude 9.0. This is based on geological evidence and historical records of the earthquake."
+Q: [EOQ]
+S: 0.0
+
+5adf315c5542995ec70e8f8b
+Sudha Kheterpal who is  musician best know as the percussionist in Faithless has played with what singer who is recognized at the highest-selling Australian artist of all time by the Australian Recording industry Association?
+Q: Sudha Kheterpal who is  musician best know as the percussionist in Faithless has played with what singer who is recognized at the highest-selling Australian artist of all time by the Australian Recording industry Association?
+A: "Sudha Kheterpal has played with Nick Cave, who is recognized as the highest-selling Australian artist of all time by the Australian Recording Industry Association."
+Q: [EOQ]
+S: 0.0
+
+5a85a2845542997175ce1fe1
+Are both Aloinopsis and Eriogonum ice plants?
+Q: Are both Aloinopsis and Eriogonum ice plants?
+A: "No, both Aloinopsis and Eriogonum are not ice plants. Aloinopsis is a genus of succulent plants in the family Asphodelaceae, while Eriogonum is a genus of flowering plants in the familyPolygonaceae. Ice plants are a group of succulent plants belonging to the genus Mesembryanthemum in the family Mesembryanthemaceae."
+Q: [EOQ]
+S: 0.0
+
+5a81b4cc5542995ce29dcc3c
+Hotride is the fifteenth single released by what music group from Braintree, Essex, that was formed in 1990?
+Q: Hotride is the fifteenth single released by what music group from Braintree, Essex, that was formed in 1990?
+A: "\u03a3\u5c99cult, also known as Skunk Anansie."
+Q: [EOQ]
+S: 0.0
+
+5ac4d314554299076e296e02
+William Novac co-wrote the memoir of what American retired professional basketball player who is current president of basketball operations for the Los Angeles Lakers?
+Q: William Novac co-wrote the memoir of what American retired professional basketball player who is current president of basketball operations for the Los Angeles Lakers?
+A: "Greg Graffin co-wrote the memoir with William Novak. However, it seems there might be a confusion here because Greg Graffin is known as the lead singer of the punk rock band Bad Religion, not a retired basketball player. The retired professional basketball player who is currently the president of basketball operations for the Los Angeles Lakers is Rob Pelinka. So, the correct answer would be Rob Pelinka, but he did not co-write a memoir with William Novak. There might be an error in the details provided."
+Q: [EOQ]
+S: 0.0
+
+5a72b9155542992359bc3187
+What service is an Amtrak flagship that includes BWI Rail Station as one of its Amtrak intercity services?
+Q: What service is an Amtrak flagship that includes BWI Rail Station as one of its Amtrak intercity services?
+A: "A: Acela Express"
+Q: [EOQ]
+S: 0.0
+
+5a8a3a355542996c9b8d5e5e
+Which light rail system would one use to visit the museum that explores the impact of modern conflicts on people and society?
+Q: Which light rail system would one use to visit the museum that explores the impact of modern conflicts on people and society?
+A: "This question is a bit broad without specifying which museum is being referred to. However, a well-known light rail system that serves museums exploring the impact of conflicts is the London Overground, which allows visitors to reach the Imperial War Museum, a museum that examines the impact of modern conflicts on people and society. If you have a specific museum in mind, please let me know and I can provide a more precise answer."
+Q: [EOQ]
+S: 0.0
+
+5a7f0c4b5542993067513600
+WHICH GROUP OF PEOPLE NICKNAMED THE US ARMYS REGIMENT "BUFFALO SOLDIERS" IN WHICH THOMAS SHAW WON THE MEDAL OF HONOR DURING THE INDIAN WARS?
+Q: WHICH GROUP OF PEOPLE NICKNAMED THE US ARMYS REGIMENT "BUFFALO SOLDIERS" IN WHICH THOMAS SHAW WON THE MEDAL OF HONOR DURING THE INDIAN WARS?
+A: "It was the Texan and African American volunteers who nicknamed the US Army's 10th Cavalry Regiment \"Buffalo Soldiers\" during the Indian Wars. Thomas Shaw, an African American soldier, did indeed win the Medal of Honor during the Indian Wars, though he is not specifically linked to the nickname \"Buffalo Soldiers.\""
+Q: [EOQ]
+S: 0.0
+
+5ae4d8475542993aec5ec0e0
+Repertoire of Plácido Domingo appeared in an opera written by whom which was based on a play by William Shakespeare?
+Q: Repertoire of Plácido Domingo appeared in an opera written by whom which was based on a play by William Shakespeare?
+A: "Giuseppe Verdi"
+Q: [EOQ]
+S: 0.0
+
+5a88a23f5542997e5c09a652
+Which director, Chris O'Dea or Lucky McKee,  is a Master of Fine Arts graduate of the UCLA School of Theater, Film and Television?
+Q: Which director, Chris O'Dea or Lucky McKee,  is a Master of Fine Arts graduate of the UCLA School of Theater, Film and Television?
+A: "Lucky McKee"
+Q: [EOQ]
+S: 0.0
+
+5a8b429f5542995d1e6f132c
+Stella Maxwell has been a model for a famous fashion shown since when?
+Q: Stella Maxwell has been a model for a famous fashion shown since when?
+A: "The information provided does not include a specific start date for Stella Maxwell modeling for a famous fashion show. Without additional context, I cannot provide an exact year. Stella Maxwell began her modeling career in the 1980s but the precise date for her debut in a famous fashion show is not specified in the provided information."
+Q: [EOQ]
+S: 0.0
+
+5ae234385542992decbdcc59
+in 1992 Spengler Cup all matches were played at the home arena of what professional Swiss ice hockey club 
+Q: in 1992 Spengler Cup all matches were played at the home arena of what professional Swiss ice hockey club
+A: "In 1992, all matches of the Spengler Cup were played at the home arena of the HC Davos, a professional Swiss ice hockey club."
+Q: [EOQ]
+S: 0.0
+
+5ab95a63554299743d22eb06
+Who was a student of Rolls Gracie and ran the Gracie Humaitá school in Rio de Janeiro?
+Q: Who was a student of Rolls Gracie and ran the Gracie Humaitá school in Rio de Janeiro?
+A: "Carlos Gracie Jr."
+Q: [EOQ]
+S: 0.0
+
+5a8494b15542991dd0999d35
+Which magazine was founded first, Allure or Genre?
+Q: Which magazine was founded first, Allure or Genre?
+A: "Genre"
+Q: [EOQ]
+S: 0.0
+
+5ab6e07b55429954757d33a0
+Which Equerry to a British monarch was married to a Marchioness Camden?
+Q: Which Equerry to a British monarch was married to a Marchioness Camden?
+A: "Thomas\u6657\u65af Parker"
+Q: [EOQ]
+S: 0.0
+
+5a8aee3d55429950cd6afc01
+Which has more species, Clianthus or Callicoma?
+Q: Which has more species, Clianthus or Callicoma?
+A: "Clianthus"
+Q: [EOQ]
+S: 0.0
+
+5a832ad55542990548d0b1b5
+What city hosts an annual convention devoted to a line of toys manufactured by a company based in Denmark?
+Q: What city hosts an annual convention devoted to a line of toys manufactured by a company based in Denmark?
+A: "Copenhagen"
+Q: [EOQ]
+S: 0.0
+
+5a7bb983554299042af8f7c1
+Who directed the nuclear war drama where Rita May played Jimmy Kemp's mother?
+Q: Who directed the nuclear war drama where Rita May played Jimmy Kemp's mother?
+A: "The question is incomplete, but based on the information provided, it sounds like you might be referring to the film \"Threads.\" Rita May played the role of Jean Littlewood in \"Threads,\" which was directed by Tony Mayfield."
+Q: [EOQ]
+S: 0.0
+
+5ab2d28b55429916697740ee
+Oprah Winfrey narrated a documentary about this athlete who rode 400 miles across his country to bring attention to the plight of the disabled in the country?
+Q: Oprah Winfrey narrated a documentary about this athlete who rode 400 miles across his country to bring attention to the plight of the disabled in the country?
+A: "Cyle Bouma"
+Q: [EOQ]
+S: 0.0
+
+5a84524a554299123d8c2203
+How many books are in the text composed by the founder Nyaya school of Hindu philosophy and is used in the development of Indian logic?
+Q: How many books are in the text composed by the founder Nyaya school of Hindu philosophy and is used in the development of Indian logic?
+A: "The text you are referring to is likely \"Nyaya Sutras,\" which was composed by the founder of the Nyaya school of Hindu philosophy, Ak\u1e63apada Gautama. The exact number of books in the Nyaya Sutras can vary depending on the interpretation, but it is generally considered to be composed of 1,525 verses spread across 13 sections or books."
+Q: [EOQ]
+S: 0.0
+
+5ab1e75f554299340b525422
+What is the name of the director from a country which has only one-tenth of its historical boundaries?
+Q: What is the name of the director from a country which has only one-tenth of its historical boundaries?
+A: "The country you're referring to is Lebanon. Lebanon has only about one-tenth of its historical boundaries remaining since the end of the Lebanese Civil War in 1990 and due to territorial changes over the years. However, this fact does not directly correspond to a director. Could you please provide the name of the director you're asking about so I can give a more specific answer? If the director is from Lebanon, I'd need the name to answer correctly."
+Q: [EOQ]
+S: 0.0
+
+5a7a69365542996c55b2dd9b
+Which film was Shannyn Sossamon in that was directed by Michael Lehmann?
+Q: Which film was Shannyn Sossamon in that was directed by Michael Lehmann?
+A: "Based on a quick review of Shannyn Sossamon's filmography, one of her notable roles was in the film \"October Sky\" directed by Michael Lehmann."
+Q: [EOQ]
+S: 0.0
+
+5abe369055429976d4830a8a
+What area once connected Great Britain to continental Europe, and is thought to have been submerged around 6,200 BCE by a massive landslide along 290 km of the continental shelf?
+Q: What area once connected Great Britain to continental Europe, and is thought to have been submerged around 6,200 BCE by a massive landslide along 290 km of the continental shelf?
+A: "Doggerland"
+Q: [EOQ]
+S: 0.0

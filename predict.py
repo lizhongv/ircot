@@ -65,6 +65,7 @@ def main():
     ).strip()
     if args.silent:
         predict_command += " --silent"
+        # predict_command += " --demo" # TODO 
     if args.variable_replacements:
         predict_command += f" --variable-replacements '{args.variable_replacements}'"
 
